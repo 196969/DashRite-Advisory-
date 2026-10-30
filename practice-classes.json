@@ -1,0 +1,379 @@
+{
+ "_doc": "Declared source classes for the practice pipeline (Item 320 Part 9, 29 Oct 2026). Read by practice.py before any read and by the standard generation; one definition.",
+ "two_windows": {
+  "Window test": "measures our reading: the most recent date of ours on the row must fall inside the window (Item 320 Part 1 ruling)",
+  "practice window": "measures the signal’s currency: the signal’s publication date must fall inside the window (Item 320 Part 8 ruling); the read date on the line dates our check"
+ },
+ "source_classes": {
+  "broker": {
+   "what": "business brokers and M&A listings",
+   "criteria": [
+    "Acquisitions"
+   ],
+   "domains": [
+    "bizbuysell.com",
+    "businessbroker.net",
+    "sunbeltnetwork.com",
+    "tworld.com",
+    "bizquest.com",
+    "dealstream.com"
+   ]
+  },
+  "trade_press": {
+   "what": "trade press and business press",
+   "criteria": [
+    "Acquisitions",
+    "Fractionals",
+    "Private Equity"
+   ],
+   "domains": [
+    "floridatrend.com",
+    "bizjournals.com",
+    "prnewswire.com",
+    "businesswire.com",
+    "globenewswire.com",
+    "sfbwmag.com",
+    "orlandosentinel.com",
+    "tampabay.com",
+    "jaxdailyrecord.com",
+    "miamiherald.com",
+    "sun-sentinel.com"
+   ]
+  },
+  "sunbiz": {
+   "what": "Florida Division of Corporations — reads only, never writes; stays at 0 reads absent a Chair ruling revisiting the Part 6 ceiling and the 0-Sunbiz posture",
+   "criteria": [
+    "Acquisitions"
+   ],
+   "domains": [
+    "search.sunbiz.org"
+   ],
+   "reads_permitted": 0
+  },
+  "sponsor": {
+   "what": "sponsor portfolio pages",
+   "criteria": [
+    "Private Equity"
+   ],
+   "domains": [
+    "trivestpartners.com",
+    "suncappart.com",
+    "hig.com",
+    "comvest.com",
+    "boynecapital.com",
+    "pfgpe.com",
+    "bostonventures.com",
+    "lcollective.com",
+    "edgewaterfunds.com",
+    "ironwoodcap.com",
+    "palmbeachcapital.com",
+    "veronisshuler.com"
+   ]
+  },
+  "job_board": {
+   "what": "job boards, for the Fractionals criterion",
+   "criteria": [
+    "Fractionals"
+   ],
+   "domains": [
+    "indeed.com",
+    "ziprecruiter.com",
+    "glassdoor.com",
+    "simplyhired.com",
+    "careerbuilder.com"
+   ]
+  }
+ },
+ "company_site": "not a source for any criterion",
+ "no_signal_found_rule": "derived only when every declared source class permitted for the criterion was read for the row and nothing returned; the classes read are logged on the row",
+ "read_cost": {
+  "ceiling": 200,
+  "ceiling_is_assumed": true,
+  "measured": "Part 7 measured a median 0.47 s per read on 135 reads; cost in reads per row per class is measured in this part and stated in bot-report-part9.json"
+ },
+ "run_order": {
+  "ruled": "2026-10-29 (Part 10)",
+  "class_order": [
+   "trade_press",
+   "job_board",
+   "broker",
+   "sponsor"
+  ],
+  "row_order": "the 47 Tier A rows in roster order (ascending row number)",
+  "sunbiz": "0 reads, through Part 10",
+  "reader": "browser, attended at a human cadence, undisguised (its own user agent string names it); a 403 is the site’s answer and is honoured as a refusal",
+  "ceiling": "one number per day, 200, shared across script and browser readers, never reset; the run stops at the ceiling and the report states where",
+  "arithmetic": "at Part 9’s measured 1.55 reads per row per class, four classes across 47 rows is about 291 reads: more than one day’s ceiling, so a full pass is two clean days or a declared partial; 1.55 was measured on 21 rows and is re-measured after this run",
+  "class_count_reconciled": {
+   "ruled": "Part 10 ruling 3, applied 29 Oct 2026",
+   "permitted_classes": [
+    "trade_press",
+    "job_board",
+    "broker",
+    "sponsor"
+   ],
+   "excluded": [
+    "sunbiz (0 reads)"
+   ],
+   "note": "Part 10’s report counted three permitted classes; that was a miscount by the build. Sunbiz was never among the four. Job boards serve the Fractionals criterion only but are read on every row, so they count.",
+   "arithmetic": "4 classes × 47 rows × 1.55 (provisional, measured on 21 rows) ≈ 291 reads ≈ 6.2 reads per row"
+  },
+  "day_one": {
+   "declared": "before read 1",
+   "covers": "rows 1–32 in declared order (ascending row number), all four permitted classes per row, row-major",
+   "expected_reads": "≈ 198 at the provisional rate",
+   "day_two_begins": "at the first row not completed on day one; the report states the row and class where the ceiling fired against this declaration"
+  }
+ },
+ "ceiling_day": {
+  "ruled": "2026-10-29 (Item 320 Part 11)",
+  "rule": "A “day” for the ceiling is the run’s UTC start date; every read from that start counts against one 200, across midnight UTC. The gate’s “0 reads for today” is read against that start date. Reads are stamped in UTC. One instrument, named precisely — beside the two-windows ruling, which was two.",
+  "witnessed": "bot-proofs-part11-clock.json: the unfixed reader granted read 201 on the new UTC date; the fixed reader refuses it"
+ },
+ "sources": {
+  "trade_press": {
+   "ruled": "Part 12, 30 Oct 2026 — Option 1: each source’s own site search, no provider, undisguised reader",
+   "order": [
+    "florida_trend"
+   ],
+   "readers": {
+    "florida_trend": {
+     "name": "Florida Trend",
+     "domain": "floridatrend.com",
+     "search": "https://www.floridatrend.com/search?q={q}",
+     "result_link": "href=\"(https?://(?:www\\.)?floridatrend\\.com/article/\\d+/[^\"]*)\"",
+     "parser_fix": "Part 13 ruling 2: the link is bound at the quote closing its href; proved on a planted adversarial tail (bot-proofs-part13.json)"
+    },
+    "sfbj": {
+     "name": "South Florida Business Journal",
+     "domain": "bizjournals.com",
+     "search": "https://www.bizjournals.com/southflorida/search?q={q}",
+     "result_link": "https?://(?:www\\.)?bizjournals\\.com/southflorida/news/\\d{4}/\\d\\d/\\d\\d/[^\"\\s]+",
+     "status": "refused by source — not run (Part 13 ruling 1)"
+    },
+    "tbbj": {
+     "name": "Tampa Bay Business Journal",
+     "domain": "bizjournals.com",
+     "search": "https://www.bizjournals.com/tampabay/search?q={q}",
+     "result_link": "https?://(?:www\\.)?bizjournals\\.com/tampabay/news/\\d{4}/\\d\\d/\\d\\d/[^\"\\s]+",
+     "status": "refused by source — not run (Part 13 ruling 1)"
+    },
+    "jbj": {
+     "name": "Jacksonville Business Journal",
+     "domain": "bizjournals.com",
+     "search": "https://www.bizjournals.com/jacksonville/search?q={q}",
+     "result_link": "https?://(?:www\\.)?bizjournals\\.com/jacksonville/news/\\d{4}/\\d\\d/\\d\\d/[^\"\\s]+",
+     "status": "refused by source — not run (Part 13 ruling 1)"
+    },
+    "obj": {
+     "name": "Orlando Business Journal",
+     "domain": "bizjournals.com",
+     "search": "https://www.bizjournals.com/orlando/search?q={q}",
+     "result_link": "https?://(?:www\\.)?bizjournals\\.com/orlando/news/\\d{4}/\\d\\d/\\d\\d/[^\"\\s]+",
+     "status": "refused by source — not run (Part 13 ruling 1)"
+    }
+   },
+   "day_one": {
+    "declared": "before read 1",
+    "covers": "rows 1–32 in ascending row order (the first 32 Tier A rows), trade press only, source-major within each row",
+    "ceiling_at_start": "128 reads already on the start date; 72 remain, so the ceiling fires inside day one and the report states the row and source"
+   },
+   "probe": "each source’s reader is probed against a planted results page in that source’s link form and a planted dated article before its first live read; a source whose probe fails is not run",
+   "refusal": "a source whose own search refuses the undisguised reader is logged as refused by source and the run moves to the next source; the reader’s name never changes",
+   "removed_by_ruling": {
+    "ruled": "Part 13 ruling 1, 30 Oct 2026",
+    "sources": [
+     "sfbj",
+     "tbbj",
+     "jbj",
+     "obj"
+    ],
+    "why": "each refused its own search to the undisguised reader (403) on every row in Part 12; removed from the trade-press class for Florida until a different source-side route is ruled; the reader’s name does not change"
+   }
+  }
+ },
+ "ruling_5": {
+  "withdrawn": "R-1029-11: no practice is gated behind another; struck in Step 9.0.a",
+  "struck": [
+   "source_classes.broker.opens",
+   "source_classes.sponsor.opens",
+   "source_classes.job_board.opens",
+   "sources.trade_press.re_read_first",
+   "sources.trade_press.day_two"
+  ]
+ },
+ "band": {
+  "ruled": "2026-10-30, Chair, 9.0.h option (a)",
+  "measure": "published annual revenue only; employee count is not a measure and is not read for band",
+  "ceiling": 25000000,
+  "ceiling_text": "up to $25,000,000 annual revenue: at or below is in band; above is band-rejected at test 1 with the figure, its URL and date read",
+  "lower_bound": null,
+  "no_published_figure": "held as size-unsourced: not admitted, not rejected, re-read when a page gives a number; never inferred",
+  "renamed": "9.6 and the module check are the band ceiling, not a floor"
+ },
+ "discovery": {
+  "ruled": "Chunk C pre-rulings, 30 Oct 2026 (rulings 1–11); sources accepted as declared, no strikes, no additions",
+  "thirds": {
+   "rule": "the day’s ceiling split in equal thirds per practice, remainder unspent; the known-answer read and the six re-reads are charged to Acquisitions",
+   "per_practice": 66,
+   "unspent": 2
+  },
+  "round_robin": "one source read per practice per round, in the order below; a source that refuses or whose probe fails stops that source only",
+  "practices": {
+   "Private Equity": {
+    "sources": [
+     {
+      "id": "hig",
+      "name": "H.I.G. Capital",
+      "base": "Miami",
+      "route": "https://hig.com/portfolio/",
+      "kind": "portfolio page",
+      "item_pattern": "https?://(?:www\\.)?hig\\.com/portfolio/(?!feed)[^\"/]+/?",
+      "pattern_derived": "from the live page form read 2026-10-30 (scratch body); probed on a control in that form"
+     },
+     {
+      "id": "suncap",
+      "name": "Sun Capital Partners",
+      "base": "Boca Raton",
+      "route": "https://www.suncappart.com/portfolio/",
+      "kind": "portfolio page",
+      "item_pattern": "https?://(?:www\\.)?suncappart\\.com/portfolio/[^\"/]+/?",
+      "pattern_derived": "from the live page form read 2026-10-30 (scratch body); probed on a control in that form"
+     },
+     {
+      "id": "trivest",
+      "name": "Trivest Partners",
+      "base": "Coral Gables",
+      "route": "https://www.trivest.com/our-private-equity-portfolio/",
+      "kind": "portfolio page",
+      "item_pattern": "(?:https?://(?:www\\.)?trivest\\.com)?/(?:portfolio|our-private-equity-portfolio)/[^\"/]+/?",
+      "pattern_derived": "from the live page form read 2026-10-30 (scratch body); probed on a control in that form"
+     },
+     {
+      "id": "comvest",
+      "name": "Comvest Partners",
+      "base": "West Palm Beach",
+      "route": "https://www.comvest.com/portfolio/",
+      "kind": "portfolio page",
+      "item_pattern": "(?:https?://(?:www\\.)?comvest\\.com)?/portfolio/[^\"/]+/?",
+      "pattern_derived": "from the live page form read 2026-10-30 (scratch body); probed on a control in that form"
+     },
+     {
+      "id": "boyne",
+      "name": "Boyne Capital",
+      "base": "Miami",
+      "route": "https://boynecapital.com/portfolio/",
+      "kind": "portfolio page",
+      "item_pattern": "https?://(?:www\\.)?boynecapital\\.com/portfolio-[^\"/]+/?",
+      "pattern_derived": "from the live page form read 2026-10-30 (scratch body); probed on a control in that form"
+     }
+    ],
+    "rule": "each portfolio page read once; every company named there is a candidate; its own page read for test 1 the same day within the PE third; a sponsor whose Florida base its own site does not confirm is recorded not Florida-based and not read further; a company already on file (test 2) is a signal on the existing row, not a candidate (ruling 11)"
+   },
+   "Acquisitions": {
+    "sources": [
+     {
+      "id": "florida_trend",
+      "name": "Florida Trend (own search)",
+      "route": "https://www.floridatrend.com/search?q={q}",
+      "kind": "site search",
+      "queries": [
+       "acquired Florida",
+       "acquisition Florida",
+       "succession Florida",
+       "retiring owner Florida",
+       "sold the company Florida",
+       "ESOP Florida"
+      ],
+      "item_pattern": "href=\"(https?://(?:www\\.)?floridatrend\\.com/article/\\d+/[^\"]*)\"",
+      "note": "the first seven reads of the day (known-answer + six re-reads) run here and are charged to this third"
+     },
+     {
+      "id": "bizbuysell",
+      "name": "BizBuySell (own Florida index)",
+      "route": "https://www.bizbuysell.com/florida-businesses-for-sale/",
+      "kind": "listing index",
+      "item_pattern": "href=\"(https?://(?:www\\.)?bizbuysell\\.com/Business-Opportunity/[^\"]+)\"[^>]*>\\s*([^<]{2,120})<",
+      "note": "anonymous listings are unusable, never guessed; counted as unusable"
+     }
+    ]
+   },
+   "Fractionals": {
+    "sources": [
+     {
+      "id": "indeed",
+      "name": "Indeed (own search)",
+      "route": "https://www.indeed.com/jobs?q={q}&l=Florida",
+      "kind": "job board search",
+      "queries": [
+       "CFO",
+       "controller",
+       "director of operations",
+       "interim CFO"
+      ],
+      "item_pattern": "data-jk=\"([a-f0-9]{8,})\"[^>]*>|<span[^>]*title=\"([^\"]{3,120})\""
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter (own search)",
+      "route": "https://www.ziprecruiter.com/jobs-search?search={q}&location=Florida",
+      "kind": "job board search",
+      "queries": [
+       "CFO",
+       "controller",
+       "director of operations",
+       "interim CFO"
+      ],
+      "item_pattern": "href=\"(https?://(?:www\\.)?ziprecruiter\\.com/c/[^\"]+)\""
+     },
+     {
+      "id": "glassdoor",
+      "name": "Glassdoor (own search)",
+      "route": "https://www.glassdoor.com/Job/florida-{q}-jobs-SRCH_IL.0,7_IS3318_KO8,{n}.htm",
+      "kind": "job board search",
+      "queries": [
+       "cfo",
+       "controller",
+       "director-of-operations",
+       "interim-cfo"
+      ],
+      "item_pattern": "href=\"(https?://(?:www\\.)?glassdoor\\.com/job-listing/[^\"]+)\""
+     }
+    ],
+    "rule": "refusals expected; logged by source with kind; a company’s own careers page is never a signal"
+   }
+  },
+  "day_one": {
+   "start_date_utc": "2026-10-31",
+   "order": [
+    "gate",
+    "known-answer read (Florida Trend; failure stops Florida Trend only)",
+    "six re-reads",
+    "every declared source probed with its control",
+    "round-robin discovery to the ceiling or exhaustion",
+    "candidates to the Intake queue",
+    "Part 10 re-measure",
+    "one report per 9.8 and Section 12"
+   ],
+   "sitting": "the Chair judges tests 3 and 4 by name at the end, in one sitting; start and end clock times stated in one line"
+  }
+ },
+ "band_by_practice": {
+  "ruled": "Ruling 10, 30 Oct 2026",
+  "Private Equity": {
+   "ceiling": 100000000,
+   "client": "the sponsor, recorded beside the portfolio company"
+  },
+  "Acquisitions": {
+   "ceiling": 25000000
+  },
+  "Fractionals": {
+   "ceiling": 25000000
+  }
+ },
+ "signal_classes_added": {
+  "ruling_7": "a source’s own feed is its own form (RSS/Atom/JSON); pubDate is the date; the linked article read for the signal clause",
+  "ruling_8": "public record as a fifth class: FloridaCommerce WARN (Fractionals); SEC EDGAR full-text, Florida Form D and 8-K acquisition items (PE, Acquisitions); Sunbiz officer/agent changes where exposed; company sites never a signal",
+  "ruling_6": "dates from structured metadata count: JSON-LD datePublished, article:published_time, time[datetime], a dated URL path, recorded with the field name"
+ }
+}

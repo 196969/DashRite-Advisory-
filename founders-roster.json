@@ -1,0 +1,863 @@
+{
+ "_doc": "Founders 72 roster for the HOT Leads programme (Item 320 ruling, 29 Oct 2026): every seat, its weight and the field it reads per part. A seat with no field for a part reads Blind by rule. Read by f72seats.py; never remembered. Corrected 29 Oct 2026: five brief-named seats already existed in the lens roster (Drucker, Maister, Baker, Goldratt, Schneier) and had been added twice; merged, one seat each.",
+ "governing_weight": 10.0,
+ "seats": [
+  {
+   "seat": "chair",
+   "name": "Timothy A. Edick",
+   "weight": 15.0,
+   "domain": "chair",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "L1",
+   "name": "David Boies",
+   "weight": 10.0,
+   "domain": "legal",
+   "origin": "Dash Founders lens roster",
+   "fields_by_part": {
+    "4": "legal exposure on contact data",
+    "9": "the row says exactly what the source says and no more"
+   }
+  },
+  {
+   "seat": "L2",
+   "name": "Martin Lipton",
+   "weight": 10.0,
+   "domain": "legal",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "A1",
+   "name": "Sir David Tweedie",
+   "weight": 10.0,
+   "domain": "accounting",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "A2",
+   "name": "Lynn Turner",
+   "weight": 10.0,
+   "domain": "accounting",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "capital",
+   "name": "Capital",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "mindset",
+   "name": "Mindset",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "velocity",
+   "name": "Velocity",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "platform",
+   "name": "Platform",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "truth",
+   "name": "Truth",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "distribution",
+   "name": "Distribution",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "frontier",
+   "name": "Frontier",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "ppp",
+   "name": "People, process, product",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "sell",
+   "name": "Sell and protect",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "sales",
+   "name": "Sales cures all",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "cashsb",
+   "name": "Cash scoreboard",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "learn",
+   "name": "Learn-it-all",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "swlev",
+   "name": "Software leverage",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "userplat",
+   "name": "User-first platform",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "companion",
+   "name": "Contained companion",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "trust",
+   "name": "Trust by design",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "frontline",
+   "name": "Front line first",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "dayone",
+   "name": "Day 1 customer",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "clientfirst",
+   "name": "Client interest first",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "reuse",
+   "name": "Reusable frameworks",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "collected",
+   "name": "Grow on collected cash",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "straight",
+   "name": "Think straight, talk straight",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "experience",
+   "name": "The experience is the product",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "fewer",
+   "name": "Fewer, done perfectly",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "network",
+   "name": "Density is the moat",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "unit",
+   "name": "The standard unit",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "toosmooth",
+   "name": "Too smooth to be real",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "entry",
+   "name": "Follow the entry",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "identity",
+   "name": "Working identity",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "market",
+   "name": "The market decides",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "waste",
+   "name": "Expose the waste",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "output",
+   "name": "Output per person",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "recognition",
+   "name": "Recognition scales",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "calls",
+   "name": "Count the calls",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "onetrue",
+   "name": "One true thing",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "minimal",
+   "name": "As little as possible",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "direct",
+   "name": "Sell direct, customer funds growth",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "longroad",
+   "name": "Hard roadmap, kept for years",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "branson",
+   "name": "Serve the badly served, bet small",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "blakely",
+   "name": "Rejection is data",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "saintjohn",
+   "name": "The audience is the hero",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "vaynerchuk",
+   "name": "Attention is the only asset",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "murphy",
+   "name": "Entered once, read everywhere",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "jain",
+   "name": "Price the risk, say no",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "rose",
+   "name": "A shipment is a document first",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "edick",
+   "name": "Execution before preparation",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "hesch",
+   "name": "Tax position, elections, and what survives examination",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "carlzon",
+   "name": "The moment of truth — the encounter that earns the next one",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "bock",
+   "name": "Hiring on evidence, paying for contribution, proving the process",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "tufte",
+   "name": "Whether a figure is shown honestly or merely shown",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "ballard",
+   "name": "The last planner — whether a schedule was committed to or only published",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "deming",
+   "name": "Variation is the enemy, and the process owns the defect",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "kerzner",
+   "name": "Scope, baseline and earned value — maturity over heroics",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "kroc",
+   "name": "The unit must run identically without the founder in it",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "skou",
+   "name": "Landed cost is the only cost — ocean, air, duty, and the law that moves them",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "tabassi",
+   "name": "AI governance to a published standard, in every state",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "drucker",
+   "name": "Peter Drucker",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster; fields per part added by Item 320 Section 2 (29 Oct 2026)",
+   "fields_by_part": {
+    "3": "Fractionals",
+    "5": "Fractionals",
+    "9": "Fractionals: every admitted Fractionals row names its decision maker with title and a dated Src: line (test 4); fails on a family name, department or role inbox"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Fractionals",
+    "check": "every admitted Fractionals row names its decision maker with title and a dated Src: line (test 4); fails on a family name, department or role inbox"
+   }
+  },
+  {
+   "seat": "maister",
+   "name": "David Maister",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster; fields per part added by Item 320 Section 2 (29 Oct 2026)",
+   "fields_by_part": {
+    "3": "Fractionals",
+    "5": "Fractionals",
+    "9": "Fractionals: every admitted Fractionals row carries a published vacancy, interim or first-finance-hire line with URL and publication date; fails on a company-site careers page used as the signal"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Fractionals",
+    "check": "every admitted Fractionals row carries a published vacancy, interim or first-finance-hire line with URL and publication date; fails on a company-site careers page used as the signal"
+   }
+  },
+  {
+   "seat": "baker",
+   "name": "Ron Baker",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster; fields per part added by Item 320 Section 2 (29 Oct 2026)",
+   "fields_by_part": {
+    "3": "Fractionals",
+    "5": "Fractionals",
+    "9": "Fractionals: every admitted Fractionals row’s company history carries years operating and size band each with a URL, or leaves them blank; fails on an unsourced clause"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Fractionals",
+    "check": "every admitted Fractionals row’s company history carries years operating and size band each with a URL, or leaves them blank; fails on an unsourced clause"
+   }
+  },
+  {
+   "seat": "reichheld",
+   "name": "Fred Reichheld",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "warrillow",
+   "name": "John Warrillow",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "goldratt",
+   "name": "Eliyahu Goldratt",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster; fields per part added by Item 320 Section 2 (29 Oct 2026)",
+   "fields_by_part": {
+    "6": "throughput against the constraint",
+    "7": "throughput against the constraint"
+   }
+  },
+  {
+   "seat": "voss",
+   "name": "Chris Voss",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "schneier",
+   "name": "Bruce Schneier",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster; fields per part added by Item 320 Section 2 (29 Oct 2026)",
+   "fields_by_part": {
+    "6": "containment and failure modes",
+    "7": "containment and failure modes"
+   }
+  },
+  {
+   "seat": "bogle",
+   "name": "John C. Bogle",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster; fields per part merged from the duplicate seat P5 (fault #24, 30 Oct 2026)",
+   "fields_by_part": {
+    "3": "Private Equity",
+    "5": "Private Equity",
+    "9": "Private Equity: every admitted PE row’s signal is the sponsor’s own portfolio page, a platform or add-on announcement, or a fund release naming the company — never the company’s own site; fails on a company-site signal"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Private Equity",
+    "check": "every admitted PE row’s signal is the sponsor’s own portfolio page, a platform or add-on announcement, or a fund release naming the company — never the company’s own site; fails on a company-site signal"
+   }
+  },
+  {
+   "seat": "tsmurphy",
+   "name": "Thomas S. Murphy",
+   "weight": 10.0,
+   "domain": "advisory",
+   "origin": "Dash Founders lens roster"
+  },
+  {
+   "seat": "chen",
+   "name": "Hui Chen",
+   "weight": 10.0,
+   "domain": "advisory, reading in its ground",
+   "origin": "Dash Founders lens roster",
+   "fields_by_part": {
+    "4": "data provenance",
+    "6": "compliance surface",
+    "7": "compliance surface"
+   }
+  },
+  {
+   "seat": "B1",
+   "name": "Warren Buffett",
+   "weight": 10.0,
+   "domain": "brief-named",
+   "origin": "Item 320 Section 2, added 29 Oct 2026 (weight equal to the named governing seats)",
+   "fields_by_part": {
+    "4": "evidence standard",
+    "5": "Private Equity",
+    "9": "Private Equity: every admitted PE row sits at or below the band ceiling ($25M published annual revenue) with the figure stated and its operating address evidenced on the company’s own page (test 1); fails on either absence"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Private Equity",
+    "check": "every admitted PE row sits at or below the band ceiling ($25M published annual revenue) with the figure stated and its operating address evidenced on the company’s own page (test 1); fails on either absence"
+   }
+  },
+  {
+   "seat": "P1",
+   "name": "Richard Branson",
+   "weight": 10.0,
+   "domain": "brief-named",
+   "origin": "Item 320 Section 2, added 29 Oct 2026 (weight equal to the named governing seats)",
+   "fields_by_part": {
+    "3": "Acquisitions",
+    "5": "Acquisitions",
+    "9": "Acquisitions: every admitted Acquisitions row carries a signal with a third-party source URL and a publication date (test 3 evidence line); fails on any admitted row whose signal has no URL or no date"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Acquisitions",
+    "check": "every admitted Acquisitions row carries a signal with a third-party source URL and a publication date (test 3 evidence line); fails on any admitted row whose signal has no URL or no date"
+   }
+  },
+  {
+   "seat": "P2",
+   "name": "Mark Cuban",
+   "weight": 10.0,
+   "domain": "brief-named",
+   "origin": "Item 320 Section 2, added 29 Oct 2026 (weight equal to the named governing seats)",
+   "fields_by_part": {
+    "3": "Acquisitions",
+    "5": "Acquisitions",
+    "9": "Acquisitions: every admitted Acquisitions row sits at or below the band ceiling ($25M published annual revenue) with the figure stated; fails on any admitted row above the ceiling or with no figure"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Acquisitions",
+    "check": "every admitted Acquisitions row sits at or below the band ceiling ($25M published annual revenue) with the figure stated; fails on any admitted row above the ceiling or with no figure"
+   }
+  },
+  {
+   "seat": "P3",
+   "name": "Robert Herjavec",
+   "weight": 10.0,
+   "domain": "brief-named",
+   "origin": "Item 320 Section 2, added 29 Oct 2026 (weight equal to the named governing seats)",
+   "fields_by_part": {
+    "3": "Acquisitions",
+    "5": "Acquisitions",
+    "9": "Acquisitions: every admitted Acquisitions row records which reachable channel it has (phone, address or form); fails on any admitted row with none recorded"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Acquisitions",
+    "check": "every admitted Acquisitions row records which reachable channel it has (phone, address or form); fails on any admitted row with none recorded"
+   }
+  },
+  {
+   "seat": "P4",
+   "name": "Ajit Jain",
+   "weight": 10.0,
+   "domain": "brief-named",
+   "origin": "Item 320 Section 2, added 29 Oct 2026 (weight equal to the named governing seats)",
+   "fields_by_part": {
+    "3": "Private Equity",
+    "5": "Private Equity",
+    "9": "Private Equity: every admitted PE row names its sponsor and the sponsor’s Florida base is evidenced with a URL and date; fails when the sponsor or its base is unevidenced"
+   },
+   "check_part9": {
+    "part": "9",
+    "practice": "Private Equity",
+    "check": "every admitted PE row names its sponsor and the sponsor’s Florida base is evidenced with a URL and date; fails when the sponsor or its base is unevidenced"
+   }
+  },
+  {
+   "seat": "P9",
+   "name": "Marcus Lemonis",
+   "weight": 10.0,
+   "domain": "brief-named",
+   "origin": "Item 320 Part 9 brief, added 29 Oct 2026 (weight equal to the named governing seats)",
+   "fields_by_part": {},
+   "note": "Part 9 ground withdrawn by the second edition’s Section 2 table; reads Blind by rule on Part 9"
+  }
+ ],
+ "standing_rules": [
+  {
+   "ruled": "2026-10-29",
+   "rule": "Blind by construction: a seat cannot read what does not yet exist. On a brief for a new artefact, a Blind reading on the seats bound to that part is not a stop; the stop binds on the delivery reading."
+  }
+ ],
+ "record": [
+  {
+   "date": "2026-10-29",
+   "part": 7,
+   "seat": "Hui Chen",
+   "reading": "Hold, then Pass",
+   "class": "instrument-label fault",
+   "note": "a check too narrow to recognise an honest unconfirmed state (no proposal — not found / refused) read Hold; the fix widened the check, not the queue. The instrument, not the data, was wrong."
+  },
+  {
+   "date": "2026-10-29",
+   "part": 8,
+   "rulings": [
+    "the cut-off line of the Part 8 brief reads \"and the console reading it\"",
+    "the practice window applies to the signal’s publication date; the Window test applies to our read date — two instruments",
+    "Detwiler’s C4 assignment overruled; the dated read-no-signal record stands; 0 signals across 47 is the correct starting number"
+   ]
+  },
+  {
+   "date": "2026-10-29",
+   "part": 9,
+   "seat": "Marcus Lemonis",
+   "reading": "Blind, then Pass",
+   "class": "instrument-label fault",
+   "note": "the seat reader imported practice.py, which opens practice-classes.json relative to the working directory; the keyword set never loaded and the seat read Blind. The reader now parses the keyword set from the file text. The instrument, not the data, was wrong."
+  },
+  {
+   "date": "2026-10-29",
+   "part": 9,
+   "rulings": [
+    "Lemonis seated at the governing weight",
+    "the Part 9 zero stands: 0 candidates, 47 rows not read, every 403 and refused search a refusal, never an absence",
+    "Sunbiz stays at 0 through Part 10; one new instrument at a time",
+    "a browser reader may be scheduled: one ceiling per day shared across readers, never reset; a 403 honoured; attended, human cadence, undisguised; the arithmetic stated up front"
+   ]
+  },
+  {
+   "date": "2026-10-29",
+   "part": 11,
+   "class": "instrument fault, witnessed before it fired",
+   "note": "the ceiling counted reads by the current UTC date, so a run crossing midnight UTC would have been granted a second 200 — a reset by the clock. Fixed: the ceiling’s day is the run’s UTC start date. Proof kept both ways: unfixed granting, fixed refusing."
+  },
+  {
+   "date": "2026-10-30",
+   "part": 12,
+   "class": "reader fault",
+   "note": "practice_sources.py crashed after one live read on a row record carried from Part 11 (missing sources_read); fixed; the read stands and the crash is logged as a run"
+  },
+  {
+   "date": "2026-10-30",
+   "part": 12,
+   "class": "parser boundary",
+   "note": "the result-link pattern ran past the link end on Florida Trend’s search page; 8 reads spent on 404s to malformed addresses"
+  },
+  {
+   "date": "2026-10-30",
+   "part": 13,
+   "rulings": [
+    "the Business Journals stay refused under Option 1 and leave the trade-press class for Florida; the reader’s name does not change",
+    "Florida Trend is the live source; parser fixed and proved; the known-answer date read, the six re-reads and day two wait for the next clean UTC start date",
+    "brokers and sponsor portfolios open only after a Florida Trend reading pass produces a non-vacuous candidate or exhausts rows 1–47; job boards parked"
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "step": "9.0",
+   "done": [
+    "b: Boies’s standing dissent printed in every verdict (fault #23 closed)",
+    "c: nine practice-seat checks defined, each failable against the intake table",
+    "Lemonis’s Part 9 ground withdrawn per Section 2"
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "step": "9.0",
+   "class": "roster double-count (fault #24, the #12 class)",
+   "note": "John C. Bogle (lens roster) and John Bogle (added P5) were one seat; the Part 6 merge matched exact names and missed the initial; merged, 78 seats, weight 785"
+  },
+  {
+   "date": "2026-10-30",
+   "step": "9.0.h",
+   "ruling": "band, option (a): published annual revenue only; ceiling $25,000,000; no lower bound; no published figure held as size-unsourced; 9.6 renamed band ceiling"
+  },
+  {
+   "date": "2026-10-30",
+   "chunk": "C-prep",
+   "fault": 25,
+   "class": "read outside the brief (stop 25)",
+   "note": "the dry-run fixture block crashed after redirecting the scratch log and before planting pages or rewriting routes; the runner then read the real declared routes through the local reader: about 30 network reads to the ten declared sources across two runs, answered 403/404 or a page; none entered the live log; nothing live was written"
+  },
+  {
+   "date": "2026-10-30",
+   "chunk": "C-prep",
+   "fault": 26,
+   "class": "reporting — evidence destroyed before it was read",
+   "note": "the per-URL record of those reads sat in dry-bot-log.jsonl; the count opened florida-bot-log.jsonl (absent), read zero, and the scratch folder was removed; the count in the report is reconstructed from run output"
+  },
+  {
+   "date": "2026-10-30",
+   "chunk": "C-prep resumed",
+   "standing_rule": "a scratch artefact is read and filed before it is deleted; an instrument never destroys its own evidence",
+   "done": "dry run re-done on planted routes with the route assertion before launch; kill switch proved mid-pass; second pass to completion; per-URL record filed"
+  },
+  {
+   "date": "2026-10-30",
+   "run": "Florida 100, Part A.1",
+   "builder_decision": "Brown Distributing: florida #97 and virginia #119 are not shown to be one company (different city, file and domain; only the Florida row carries a dated Src: line). Neither retired; the Virginia row annotated. Retiring on the name alone would write an unevidenced duplicate."
+  },
+  {
+   "date": "2026-10-30",
+   "run": "Florida 100, Part C",
+   "builder_decisions": [
+    "the Practice column and filter already exist on both Florida files (C4); verified, not rebuilt",
+    "the composer’s three practice openers are generated from the practice standard’s criteria text and claim nothing about the recipient; they attach when the composer overlay opens",
+    "the Src: validator where a human types is exposed in the console (srcLinesValid) but found no note-save function to hook: recorded as a gap, hooked when such a control exists",
+    "the call timer’s export already exists on the console; market pages write nothing, so no export is added to them",
+    "status and tier filters are derived since Item 312; verified"
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "run": "Florida 100 day one",
+   "fault": 27,
+   "note": "four sponsor item patterns built from memory of the link form; probes passed on planted forms; live forms differed (no www, relative hrefs, portfolio-<slug>, a different route); derived from the live bodies and re-probed, 5 reads"
+  },
+  {
+   "date": "2026-10-30",
+   "fault": 28,
+   "note": "the company site was taken as the first external href on a sponsor company page, which on H.I.G. is a site-wide portal link; 26 candidates read at the wrong site, 52 reads spent"
+  },
+  {
+   "date": "2026-10-30",
+   "fault": 29,
+   "note": "the Florida-on-card flag read a ±600-character window that overlaps neighbouring cards; prioritisation by it was noise"
+  },
+  {
+   "date": "2026-10-30",
+   "fault": 30,
+   "note": "the known-answer read failed (no date form found) and Florida Trend was marked stopped, but the runner’s skip list did not recognise the stopped state and read 6 queries and 15 articles anyway, all refused for no publication date"
+  },
+  {
+   "date": "2026-10-30",
+   "fault": 31,
+   "note": "Trivest’s portfolio renders after load; the declared route’s body carries navigation only; 2 reads, 0 companies"
+  },
+  {
+   "date": "2026-10-30",
+   "builder_decisions": [
+    "window one’s own log florida100-window1-log.jsonl per ruling 1",
+    "sponsor candidates queued from bodies already read (no reads charged twice)",
+    "test-1 reads prioritised by the card flag (later found to be noise)",
+    "the PE third spent before the external-link fault was found; the fix is proved on the next window’s first read, not by spending a second third"
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "window": 2,
+   "fault": 32,
+   "note": "day one’s wrong-site company links were cleared by one host, not by class; six Sun Capital candidates were read again at gmpg.org/xfn/11; six reads, not findings"
+  },
+  {
+   "date": "2026-10-30",
+   "window": 2,
+   "fault": 33,
+   "note": "the Florida check on a sponsor entry read the whole page; Sun Capital’s own Boca Raton footer placed every entry in Florida. The H.I.G. entry carries a structured Location field; that field, not the page, is the source"
+  },
+  {
+   "date": "2026-10-30",
+   "window": 2,
+   "builder_decisions": [
+    "addition 1 applied from the already-read sponsor pages with no reads; only Sun Capital’s cards carry a location",
+    "sponsor entries read 20 per source (H.I.G., Comvest, Sun; Boyne 3 before the third spent) — the cap applied to entry reads as test-1 reads’ precondition",
+    "nine new sources read once for their live forms: only Sunbelt answered (6 listing items in its form); the four business journals’ news sections, Transworld, Murphy, CareerBuilder and SimplyHired refused (403/404)",
+    "Florida Trend: the one live article shows the page’s date widget (today) and no publication date form the extractor can bind to; it stays stopped",
+    "addition 5 not exercised: no practice produced, so no third was released"
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "window": 3,
+   "builder_decisions": [
+    "the Tier A re-read was one read per row at the company’s home page; a named executive, phone or email not found on that one page is recorded as “not on the page read”, not as unpublished or wrong — no tier moved on a single home-page read; the contact and leadership pages are the next read before any tier moves (ruling 9 honoured: never silently)",
+    "Sunbiz refuses this reader (403); the registry half of every re-read stays outstanding, recorded, never a pass",
+    "the feed continuation spent the remaining ceiling on Google News RSS, the only producing source (addition 5)",
+    "feed candidates carry the signal sentence, URL and structured date; the company name is not extracted by the bot — the Chair names it from the sentence at the sitting (never guessed)",
+    "AVI-SPL (H.I.G., Tampa by the entry’s Location field, Florida on its own page, a published address) passes tests 1, 2 and 5 but carries no published revenue figure yet: held size-unsourced under 9.0.h, not counted as admitted",
+    "the console’s per-practice email tabs (Part 5) were not built this window; carried to the next, 0 reads"
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "window": 3,
+   "fault": 34,
+   "note": "the re-read charge bucket was not registered in the thirds map; the first launch crashed before any read; fixed and relaunched"
+  }
+ ]
+}
