@@ -1,0 +1,7577 @@
+{
+ "practice_standard": {
+  "_doc": "Declared source classes for the practice pipeline (Item 320 Part 9, 29 Oct 2026). Read by practice.py before any read and by the standard generation; one definition.",
+  "two_windows": {
+   "Window test": "measures our reading: the most recent date of ours on the row must fall inside the window (Item 320 Part 1 ruling)",
+   "practice window": "measures the signal’s currency: the signal’s publication date must fall inside the window (Item 320 Part 8 ruling); the read date on the line dates our check"
+  },
+  "source_classes": {
+   "broker": {
+    "what": "business brokers and M&A listings",
+    "criteria": [
+     "Acquisitions"
+    ],
+    "domains": [
+     "bizbuysell.com",
+     "businessbroker.net",
+     "sunbeltnetwork.com",
+     "tworld.com",
+     "bizquest.com",
+     "dealstream.com"
+    ]
+   },
+   "trade_press": {
+    "what": "trade press and business press",
+    "criteria": [
+     "Acquisitions",
+     "Fractionals",
+     "Private Equity"
+    ],
+    "domains": [
+     "floridatrend.com",
+     "bizjournals.com",
+     "prnewswire.com",
+     "businesswire.com",
+     "globenewswire.com",
+     "sfbwmag.com",
+     "orlandosentinel.com",
+     "tampabay.com",
+     "jaxdailyrecord.com",
+     "miamiherald.com",
+     "sun-sentinel.com"
+    ]
+   },
+   "sunbiz": {
+    "what": "Florida Division of Corporations — reads only, never writes; stays at 0 reads absent a Chair ruling revisiting the Part 6 ceiling and the 0-Sunbiz posture",
+    "criteria": [
+     "Acquisitions"
+    ],
+    "domains": [
+     "search.sunbiz.org"
+    ],
+    "reads_permitted": 0
+   },
+   "sponsor": {
+    "what": "sponsor portfolio pages",
+    "criteria": [
+     "Private Equity"
+    ],
+    "domains": [
+     "trivestpartners.com",
+     "suncappart.com",
+     "hig.com",
+     "comvest.com",
+     "boynecapital.com",
+     "pfgpe.com",
+     "bostonventures.com",
+     "lcollective.com",
+     "edgewaterfunds.com",
+     "ironwoodcap.com",
+     "palmbeachcapital.com",
+     "veronisshuler.com"
+    ]
+   },
+   "job_board": {
+    "what": "job boards, for the Fractionals criterion",
+    "criteria": [
+     "Fractionals"
+    ],
+    "domains": [
+     "indeed.com",
+     "ziprecruiter.com",
+     "glassdoor.com",
+     "simplyhired.com",
+     "careerbuilder.com"
+    ]
+   }
+  },
+  "company_site": "not a source for any criterion",
+  "no_signal_found_rule": "derived only when every declared source class permitted for the criterion was read for the row and nothing returned; the classes read are logged on the row",
+  "read_cost": {
+   "ceiling": 200,
+   "ceiling_is_assumed": true,
+   "measured": "Part 7 measured a median 0.47 s per read on 135 reads; cost in reads per row per class is measured in this part and stated in bot-report-part9.json"
+  },
+  "ruled": "2026-10-29",
+  "criteria": {
+   "Acquisitions": {
+    "what": "sale posture, succession or ownership transition",
+    "source_rule": "third parties only (brokers, trade press, registries); never the company's own site"
+   },
+   "Fractionals": {
+    "what": "a published finance or operations vacancy, an interim-leadership announcement, or a first-finance-hire posting",
+    "source_rule": "a published posting or announcement, with its source and date"
+   },
+   "Private Equity": {
+    "what": "a Florida sponsor's published portfolio, platform or add-on announcement",
+    "source_rule": "the sponsor's or the press's publication, with its source and date"
+   }
+  },
+  "states": [
+   "signal",
+   "no signal found",
+   "not read"
+  ],
+  "rule": "derived from dated signal lines and read-no-signal lines on the row; never typed; the bot's Part 7 sentences enter as not read until a human reads them; a signal dated outside the window reads no signal found",
+  "window_days": 365
+ },
+ "market": "florida",
+ "standard": "Phase 3 workable-row standard",
+ "measured": "2026-10-29 (classifier pass: trading check dated on its own line; source_state from the Src line; Band 2 second entry; no sourced row labelled unsourced)",
+ "note": "Re-run audit.py after any upload of florida.html; the console reads this file as Phase 3’s table.",
+ "rows": {
+  "1": {
+   "company": "Invicta Watch Group",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "2": {
+   "company": "Badia Spices",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "3": {
+   "company": "Quirch Foods",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "4": {
+   "company": "Cheney Brothers",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "5": {
+   "company": "Gold Coast Beverage",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "6": {
+   "company": "Eagle Brands Sales",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "7": {
+   "company": "Martinez Distributors",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": false,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a sourced address",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "8": {
+   "company": "PJ Distributors",
+   "tests": {
+    "Company": false,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Unsourced",
+   "band": 3,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "no dated Src: line"
+   ],
+   "source_state": "blind",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated company source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "9": {
+   "company": "Riverdale Farms",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "10": {
+   "company": "Sunshine Bouquet",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "11": {
+   "company": "Turbana Corp",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 2 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 2 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 2 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "12": {
+   "company": "Fresh Del Monte Produce",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "13": {
+   "company": "Chiquita Brands (US HQ)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "14": {
+   "company": "Bacardi USA",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": false
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "15": {
+   "company": "Southern Glazer's Wine &amp; Spirits",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "16": {
+   "company": "National Beverage (LaCroix)",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "17": {
+   "company": "Celsius Holdings",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "18": {
+   "company": "Watsco",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": false,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a sourced address",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "19": {
+   "company": "Refricenter",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "20": {
+   "company": "TruckMax",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "21": {
+   "company": "Sedano's Supermarkets",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "22": {
+   "company": "Presidente Supermarkets",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "23": {
+   "company": "City Furniture",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "24": {
+   "company": "BrandsMart USA",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "25": {
+   "company": "Perry Ellis International",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": false,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a sourced address",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "26": {
+   "company": "JM Family Enterprises",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "27": {
+   "company": "World Kinect",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "28": {
+   "company": "HEICO",
+   "tests": {
+    "Company": false,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": false,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Unsourced",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "no dated Src: line"
+   ],
+   "source_state": "unsourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated company source; needs a dated trading check; needs a sourced address; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "29": {
+   "company": "Sintavia",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 0 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 0 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 0 class hit(s)"
+     }
+    }
+   }
+  },
+  "30": {
+   "company": "VSE Aviation",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "31": {
+   "company": "Cordis",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "32": {
+   "company": "Noven Pharmaceuticals",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "33": {
+   "company": "Eco Window Systems",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "34": {
+   "company": "Cigarette Racing Team",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "35": {
+   "company": "WTDC Logistics",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "36": {
+   "company": "SkyPostal",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 0 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 0 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 0 class hit(s)"
+     }
+    }
+   }
+  },
+  "37": {
+   "company": "Fulfillment Hub USA",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "38": {
+   "company": "TBC Corporation",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "39": {
+   "company": "Oxbow Carbon",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "40": {
+   "company": "Florida Crystals",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "41": {
+   "company": "Vigo Importing",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "website names a different company",
+    "role or family as decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "42": {
+   "company": "Pepin Distributing",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 2 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 2 class hit(s)",
+      "job_board": "search refused"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 2 class hit(s)",
+      "job_board": "search refused"
+     }
+    }
+   }
+  },
+  "43": {
+   "company": "Great Bay Distributors",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "role or family as decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a named decision maker",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "search refused",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "44": {
+   "company": "J.J. Taylor Distributing FL",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "45": {
+   "company": "Coca-Cola Beverages Florida",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "46": {
+   "company": "Trademark Metals Recycling",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "47": {
+   "company": "Masonite International",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "48": {
+   "company": "Rooms To Go",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)",
+      "job_board": "read 2026-10-29: 2 class hit(s)"
+     }
+    }
+   }
+  },
+  "49": {
+   "company": "Jabil",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "50": {
+   "company": "TD Synnex",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "51": {
+   "company": "Helios Technologies (Sun Hydraulics)",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "52": {
+   "company": "Boar's Head Provisions",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "53": {
+   "company": "Tropicana Brands",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "54": {
+   "company": "Bealls Inc.",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)"
+     }
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)"
+     }
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row",
+     "classes_read": {
+      "trade_press": "read 2026-10-29: 0 class hit(s)"
+     }
+    }
+   }
+  },
+  "55": {
+   "company": "Tervis",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "56": {
+   "company": "PGT Innovations",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "57": {
+   "company": "Teakdecking Systems",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "58": {
+   "company": "Saddle Creek Logistics",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "59": {
+   "company": "Barney's Pumps",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "60": {
+   "company": "Florida's Natural Growers",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "62": {
+   "company": "Correct Craft (Nautique)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "63": {
+   "company": "Regal Boats",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "64": {
+   "company": "Florida Paints",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "65": {
+   "company": "ABC Fine Wine &amp; Spirits",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "67": {
+   "company": "Duda Farm Fresh Foods",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "68": {
+   "company": "E-ONE (fire apparatus)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "69": {
+   "company": "ClosetMaid",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "70": {
+   "company": "Cone Distributors",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "71": {
+   "company": "Exactech",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "72": {
+   "company": "Monterey Boats",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "role or family as decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a named decision maker",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "73": {
+   "company": "Beaver Street Fisheries",
+   "tests": {
+    "Company": false,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Unsourced",
+   "band": 3,
+   "bandTier": "A",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "no dated Src: line"
+   ],
+   "source_state": "blind",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated company source; needs a dated trading check; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "74": {
+   "company": "Ring Power (CAT)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "75": {
+   "company": "Rulon International",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "76": {
+   "company": "Safariland",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "77": {
+   "company": "Southeastern Grocers",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "78": {
+   "company": "Fanatics (Jax ops)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "79": {
+   "company": "Reid Transportation Group",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "80": {
+   "company": "Boston Whaler",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "81": {
+   "company": "Everglades Boats",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "82": {
+   "company": "El Dorado Furniture",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 2,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "83": {
+   "company": "Duty Free Americas",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [
+    "role or family as decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a named decision maker",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "84": {
+   "company": "Sunshine Gasoline Distributors",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 3 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "85": {
+   "company": "Goya Foods of Florida",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "86": {
+   "company": "Miami Beef Company",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 2,
+   "bandTier": "A",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "87": {
+   "company": "Antillean Marine",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "88": {
+   "company": "Amerijet International",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "89": {
+   "company": "Brown Jordan",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "90": {
+   "company": "Ocean Bio-Chem (Star brite)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "91": {
+   "company": "Sheltair Aviation",
+   "tests": {
+    "Company": false,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Unsourced",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [
+    "no dated Src: line"
+   ],
+   "source_state": "unsourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated company source; needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "92": {
+   "company": "Kellstrom Aerospace",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check",
+    "dated decision maker"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a named decision maker; needs a dated title; needs a phone source; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "93": {
+   "company": "Ed Morse Automotive Group",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "94": {
+   "company": "Rick Case Automotive Group",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "95": {
+   "company": "Braman Motorcars",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "96": {
+   "company": "Modernizing Medicine (ModMed)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "97": {
+   "company": "Brown Distributing",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "role or family as decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a named decision maker",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "98": {
+   "company": "US Sugar",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "99": {
+   "company": "Lipman Family Farms",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage Processing",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits"
+    },
+    "Fractionals": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits"
+    },
+    "Private Equity": {
+     "state": "no signal found",
+     "source": "the company's own site",
+     "date": "2026-10-29",
+     "why": "read from the company's own site; nothing fits"
+    }
+   }
+  },
+  "100": {
+   "company": "Arthrex",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "101": {
+   "company": "Suncoast Beverage Sales",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check",
+    "dated decision maker"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a named decision maker; needs a dated title; needs a phone source; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "102": {
+   "company": "Shaw Development",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "103": {
+   "company": "Alico Inc.",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "104": {
+   "company": "Detwiler’s Farm Market",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "no signal found",
+     "source": null,
+     "date": "2026-10-29",
+     "why": "read, nothing fits the criterion"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "105": {
+   "company": "Intertape Polymer Group",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "106": {
+   "company": "Apyx Medical",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "107": {
+   "company": "Plasma-Therm",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "108": {
+   "company": "Superior Group of Companies",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "109": {
+   "company": "FrankCrum",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "110": {
+   "company": "Amscot Financial",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "111": {
+   "company": "BlueGrace Logistics",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "112": {
+   "company": "Morgan Auto Group",
+   "tests": {
+    "Company": false,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Unsourced",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [
+    "no dated Src: line"
+   ],
+   "source_state": "unsourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated company source; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "114": {
+   "company": "Checkers &amp; Rally’s",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "115": {
+   "company": "Wish Farms",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "116": {
+   "company": "Florida Beer Company",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "117": {
+   "company": "Wayne Densch Inc.",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check",
+    "dated decision maker"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "118": {
+   "company": "S.R. Perrott",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 2 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "119": {
+   "company": "Massey Services",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "120": {
+   "company": "Mears Transportation",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "121": {
+   "company": "Rosen Hotels &amp; Resorts",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "122": {
+   "company": "Westgate Resorts",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "123": {
+   "company": "Cavalier Distributing Florida",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "124": {
+   "company": "Sonny’s BBQ",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "125": {
+   "company": "4R Restaurant Group (4 Rivers)",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "126": {
+   "company": "Piper Aircraft",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "127": {
+   "company": "IMG Citrus",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "128": {
+   "company": "Natalie’s Orchid Island Juice",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "needs a dated trading check",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "129": {
+   "company": "Pursuit Boats",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "130": {
+   "company": "Twin Vee PowerCats",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "131": {
+   "company": "Satcom Direct",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check",
+    "dated decision maker"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a named decision maker; needs a dated title; needs a phone source; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "132": {
+   "company": "Vac-Con",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "133": {
+   "company": "Sally Dark Rides",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "134": {
+   "company": "Bubba Foods",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage Processing",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "135": {
+   "company": "American Coolair",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 1,
+   "bandTier": "A",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "136": {
+   "company": "Miller Electric Company",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "137": {
+   "company": "W.W. Gay Mechanical",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "138": {
+   "company": "Gate Petroleum",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "139": {
+   "company": "Swisher",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "140": {
+   "company": "Mac Papers + Packaging",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Manufacturing & Industrial",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "141": {
+   "company": "Patriot Transportation",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "142": {
+   "company": "ICI Homes",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "143": {
+   "company": "Trailer Bridge",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "144": {
+   "company": "TOTE Maritime",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": "Blind"
+   },
+   "workable": false,
+   "class": "Stale",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "sourced once, outside the window"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check",
+    "dated decision maker"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a named decision maker; needs a dated title; needs a phone source; needs a re-dated read (a date of ours inside the window)",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "145": {
+   "company": "Innisfree Hotels",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "146": {
+   "company": "Studer Family of Companies",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "B",
+   "ground": "Other",
+   "why": [
+    "missing trading check",
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check",
+    "dated decision maker"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "147": {
+   "company": "Milam’s Markets",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 4 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  },
+  "148": {
+   "company": "Doris Italian Market",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "149": {
+   "company": "Fresco y Más",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Suspect",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Food & Beverage distribution/retail",
+   "why": [
+    "website names a different company"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "150": {
+   "company": "Magaya",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Distribution & Wholesale",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "151": {
+   "company": "IBC Airways",
+   "tests": {
+    "Company": true,
+    "Trading": false,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": false,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 3,
+   "bandTier": "B",
+   "ground": "Distribution & Wholesale",
+   "why": [
+    "missing trading check"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "trading check"
+   ],
+   "trading_kind": null,
+   "undated_src": [],
+   "move": "blocked by more than one: needs a dated trading check; needs a phone source",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "152": {
+   "company": "Cutrale Citrus Juices USA",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": false,
+    "Title": false,
+    "Phone": false,
+    "Address": true,
+    "Website": false,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": false,
+   "class": "Sourced, with gaps",
+   "band": 4,
+   "bandTier": "C",
+   "ground": "Other",
+   "why": [
+    "missing dated decision maker"
+   ],
+   "source_state": "sourced",
+   "gaps": [
+    "dated decision maker"
+   ],
+   "trading_kind": "other dated check",
+   "undated_src": [],
+   "move": "blocked by more than one: needs a named decision maker; needs a dated title; needs a phone source; needs a website that names the company",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "nobody has read this criterion for the row"
+    }
+   }
+  },
+  "153": {
+   "company": "Kelly Tractor Co.",
+   "tests": {
+    "Company": true,
+    "Trading": true,
+    "Decision maker": true,
+    "Title": true,
+    "Phone": true,
+    "Address": true,
+    "Website": true,
+    "Tier": true,
+    "Window": true
+   },
+   "workable": true,
+   "class": "Live",
+   "band": 4,
+   "bandTier": "A",
+   "ground": "Other",
+   "why": [],
+   "source_state": "sourced",
+   "gaps": [],
+   "trading_kind": "site",
+   "undated_src": [],
+   "move": "passes every test",
+   "practice": {
+    "Acquisitions": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Fractionals": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    },
+    "Private Equity": {
+     "state": "not read",
+     "source": null,
+     "date": null,
+     "why": "the bot gathered 1 sentence(s) in Part 7; unread by a human"
+    }
+   }
+  }
+ },
+ "florida100_close": {
+  "closed": "2026-10-31",
+  "ruling": "the Chair: the Florida 100 closes at its measured count — a route tested and found absent, not a shortfall",
+  "admitted": 7,
+  "complete_contact_outstanding": [
+   "Moneysolver",
+   "Marino Performance Motors",
+   "TrakAmerica"
+  ],
+  "confirmed": 0,
+  "measured": {
+   "windows": 16,
+   "feed_full_pass_rate": "about 1–2 companies reaching tests 1, 2 and 5 per window at 70–135 reads; 0 in window sixteen; the Private Equity and Fractionals feed queues exhausted",
+   "sponsor_roster_hig": "377 entries read in full; 28 Florida by the Location field (~7%); 6 passing test 1 (~1.6%); about one read per entry, because location is not on the listing’s face",
+   "association_rosters": "FRLA, the Manufacturers Association of Florida, the Florida Trucking Association: no member directory linked from the home page; FloridaMakes: directory linked, 404 — none readable (scope: these four)",
+   "revenue": "no free route produced a published revenue figure for any of the companies passing every other test; two figures found were above the ceiling (SeaWorld $1.66B, Mainline over $1B); size ruled Blind at window fifteen",
+   "completion": "every admission after window fifteen came from completing rows already found (a named executive), not from discovery"
+  },
+  "for_the_next_market": [
+   "completion beats discovery: start from the rows already on file",
+   "a roster pays only where location is on the listing’s face",
+   "revenue for private companies at this size is not published on free routes; decide the size rule before the run, not after",
+   "prove every instrument on both sets — what it must stop and what it must keep — and gate the run on the proofs",
+   "count every check from its own counter; a zero must say whether it ran"
+  ],
+  "faults": "1–61, in founders-roster.json and the window reports"
+ },
+ "inheritance": {
+  "per_source_class": {
+   "press feed (Google News)": {
+    "reads": 499,
+    "admissions_sourced": 5,
+    "reads_per_admission": 99.8
+   },
+   "other": {
+    "reads": 260,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   },
+   "marketplaces and probes": {
+    "reads": 109,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   },
+   "sponsor roster": {
+    "reads": 564,
+    "admissions_sourced": 2,
+    "reads_per_admission": 282.0
+   },
+   "completion / executive reads": {
+    "reads": 36,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   },
+   "revenue routes": {
+    "reads": 152,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   }
+  },
+  "end_states_by_class": {
+   "earlier windows (sponsors, feeds, contact paths)": {
+    "closed": 3,
+    "answering": 14,
+    "refused": 3,
+    "exhausted": 2,
+    "unread": 1
+   },
+   "Marketplace": {
+    "closed": 11
+   },
+   "Transportation & Logistics": {
+    "answering": 6
+   },
+   "Food & Beverage": {
+    "refused": 1,
+    "answering": 5
+   },
+   "Manufacturing / Distribution": {
+    "refused": 5,
+    "answering": 6
+   },
+   "Construction": {
+    "refused": 3,
+    "answering": 1
+   },
+   "Retail, Field Ops & Events": {
+    "refused": 3,
+    "answering": 4
+   },
+   "Government finders": {
+    "answering": 10,
+    "refused": 1
+   },
+   "Press": {
+    "refused": 5,
+    "unread": 1,
+    "answering": 4
+   },
+   "Brand / Marketing / Sales": {
+    "refused": 2,
+    "answering": 2
+   },
+   "Registry": {
+    "refused": 1,
+    "answering": 1
+   },
+   "Vacancy": {
+    "refused": 3,
+    "answering": 1,
+    "closed": 5
+   },
+   "Associations & ED": {
+    "answering": 6
+   },
+   "Fraud control": {
+    "answering": 3,
+    "refused": 2
+   }
+  },
+  "findings_for_the_next_market": [
+   "the press feed admits about one row per ~100 reads; sponsor rosters about one per ~280; every other class admitted none",
+   "marketplaces anonymise listings by design: a for-sale signal never names its company — closed, not re-tried",
+   "rosters pay in reads only where the listing carries the city on its face; of 45 roster-class sources probed in Florida, none did",
+   "registry, vacancy, association and fraud sources answered (or refused) without a company list on their face; Sunbiz and the WARN list refuse this reader",
+   "completion costs about 5 reads per finished row against ~100–280 to discover one: start a market from the rows on file",
+   "decide the size rule before the run: private revenue at this size is not published on free routes"
+  ]
+ },
+ "call_ready": {
+  "named decision maker": "a person with a title on the row, from a dated source",
+  "contact": "a published phone or email on the row with a dated read on the row (Src: or Address source); a role inbox is flagged and counts as contact, distinct from a named individual",
+  "practice fit": "the row passed the market standard’s tier test (A, B, or Unverified intake); Tier C failed it",
+  "signal": "a dated third-party practice signal where one exists; Blind recorded where it does not — it does not block a dial"
+ },
+ "dial_rules": {
+  "call_ready": "a named decision maker with title from a dated source; a published phone or email with a dated read (role inbox flagged); practice fit by the market standard’s tier test",
+  "verified_callable": "call-ready, and trading confirmed on the company’s own pages with an address sourced inside the window (the Core BD Report’s test)",
+  "blind": "a Blind signal does not block a dial",
+  "classifiers": "a classifier’s output is read before it is written or counted",
+  "closures": "a closure is keyed on the host it measures",
+  "officers": "an officer binds to a company by one clause’s grammar, never by span",
+  "portfolio_band": "a Private Equity row is not capped at $25M: the counterparty is the sponsor; the qualifier is the sponsor relationship and the operating problem. The $25M band governs Fractionals and Acquisitions, where the owner is the buyer (ruled 2026-10-31)",
+  "route": "Florida is a phone market: 2 named addresses against 31 role inboxes across 98 call-ready rows; email follows a connected call (measured 2026-10-31)",
+  "two_addresses": "a register address and a row city that differ are both recorded, each labelled by what it is; neither overwrites the other (ruled 2026-10-31)",
+  "rows_or_companies": "every count states whether it is rows or companies (all 27 markets)",
+  "self_overlap": "the self-overlap check is owed in every market before its figures are stated; until it runs, that market’s company counts are unknown, not merely unverified",
+  "tier_contest": "a tier contested across two files is resolved by evidence: Tier C governs only where the Tier C row names its screen-out; unevidenced Tier C yields; two named reasons that disagree are held"
+ },
+ "florida_close": {
+  "date": "2026-10-31",
+  "rows": 200,
+  "dialable_universe": 115,
+  "dialable_universe_measured": "florida.html Tier A 47 + Tier B 45, expansion main A 12 + B 4, intake 7",
+  "call_ready": "98 rows across 97 companies (93 + 2 + 3 + 1 − 1 Correct Craft, resolved to Tier C by evidence)",
+  "verified_callable": 25,
+  "partial": 13,
+  "measured_shut": 9,
+  "tier_C_out_of_scope": 85,
+  "admissions_whole_reopening": 7,
+  "admitted_rows": [
+   "Alpha Foundations",
+   "American Fasteners",
+   "FreightCenter",
+   "Palm Medical Centers",
+   "Altitude Water",
+   "Health Network One",
+   "STS Aviation Group"
+  ],
+  "reads_per_admission_by_source_class": {
+   "press feed (Google News)": {
+    "reads": 499,
+    "admissions_sourced": 5,
+    "reads_per_admission": 99.8
+   },
+   "other": {
+    "reads": 260,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   },
+   "marketplaces and probes": {
+    "reads": 109,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   },
+   "sponsor roster": {
+    "reads": 564,
+    "admissions_sourced": 2,
+    "reads_per_admission": 282.0
+   },
+   "completion / executive reads": {
+    "reads": 36,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   },
+   "revenue routes": {
+    "reads": 152,
+    "admissions_sourced": 0,
+    "reads_per_admission": "none admitted"
+   }
+  },
+  "completion_cost": "run three: 87 reads, 13 completions, 6.7 reads each",
+  "call_ready_lineage": "93 + 2 (register) + 3 (queue) + 1 (Martinez expansion row) = 99 call-ready rows across 98 distinct companies",
+  "rows_and_companies": {
+   "rows": {
+    "rows": 200,
+    "companies": 197
+   },
+   "dialable": {
+    "rows": 115,
+    "companies": 114
+   },
+   "call_ready": {
+    "rows": 99,
+    "companies": 98
+   },
+   "verified_callable": {
+    "rows": 25,
+    "companies": 25
+   },
+   "tier_C": {
+    "rows": 85,
+    "companies": 84
+   }
+  },
+  "self_overlap_pairs": [
+   "CHENEY BROTHERS",
+   "MARTINEZ DISTRIBUTORS",
+   "CORRECT CRAFT"
+  ],
+  "size": "200 rows across 197 companies"
+ }
+}
