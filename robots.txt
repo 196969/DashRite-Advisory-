@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Fixed-canvas market sheets — not web pages, deliberately not indexed
+Disallow: /state-
+
+Sitemap: https://196969.github.io/DashRite-Advisory-/sitemap.xml
