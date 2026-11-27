@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Health Assessment — DashRite Advisory LLC</title>
+<meta name="description" content="Five questions, about sixty seconds. Tell us where your business is today, where you want it to go and what stands in the way. Your answers shape a free evaluation, in writing.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="DashRite Advisory LLC">
+<meta property="og:title" content="Business Health Assessment — five questions, sixty seconds">
+<meta property="og:description" content="Five bites of the apple: the five questions that find where the biggest win is hiding. Your answers shape a free evaluation, in writing, then you decide.">
+<meta property="og:url" content="https://dashriteadvisory.com/assessment.html">
+<meta property="og:image" content="https://dashriteadvisory.com/assets/dashrite-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://dashriteadvisory.com/assessment.html">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#243B66;--ink:#1f2937;--muted:#4b5563;--red:#e0304a;--teal:#0f6e75;--line:#d9dee8;--bg:#f4f6fa}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+h1,h2,legend,p,.lede{text-wrap:pretty} h1{text-wrap:balance}
+.wrap{max-width:880px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left)) 48px}
+header{background:#fff;border-bottom:3px solid var(--navy)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+header img{height:64px;width:auto}
+header a{color:var(--navy);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:24px}
+h1{color:var(--navy);font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0 0 8px;font-weight:800;letter-spacing:-.01em}
+.tag{color:var(--red);font-size:clamp(16px,2.4vw,19px);margin:0 0 18px;font-weight:500}
+.kicker{color:var(--navy);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}
+fieldset.q{border:0;margin:0;padding:22px 0;border-top:1px solid var(--line)}
+legend{color:var(--navy);font-weight:700;font-size:17px;padding:0;margin-bottom:12px} legend b{color:var(--red)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+.opt{display:flex;align-items:flex-start;gap:10px;font-size:15px;cursor:pointer;min-width:0}
+.opt input[type=checkbox]{width:18px;height:18px;margin-top:2px;accent-color:var(--navy);flex:none}
+.opt.other{grid-column:1/-1;align-items:center}
+.opt.other input[type=text]{flex:1;min-width:0;border:0;border-bottom:1px solid #9ca3af;font:inherit;padding:4px 2px;background:transparent}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.fields label{display:flex;flex-direction:column;font-weight:600;color:var(--navy);font-size:14px;gap:6px}
+.fields input,.fields textarea{font:inherit;font-weight:400;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+.fields .full{grid-column:1/-1}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-block;border-radius:10px;padding:13px 20px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff} .btn.ghost{background:#fff;color:var(--navy)}
+.note{color:var(--muted);font-size:13px;margin-top:10px}
+.next li{margin:6px 0} .next li::marker{color:var(--red);content:"→  "}
+.copy{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted);margin-top:12px}
+.copy code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;color:var(--ink);user-select:all;word-break:break-all}
+footer{text-align:center;padding:28px 16px 40px;color:var(--muted);font-size:14px}
+footer .rite{color:var(--red);font-weight:800;font-size:20px;margin:0} footer .vals{color:var(--navy);font-weight:700;margin:4px 0}
+@media (max-width:640px){.opts,.fields{grid-template-columns:1fr} .card{padding:20px} header img{height:48px}}
+</style></head>
+<body>
+<header><div class="wrap"><a href="index.html" aria-label="DashRite Advisory home"><img src="assets/dashrite-logo.png" alt="DashRite Advisory" width="152" height="64"></a><a href="index.html">dashriteadvisory.com</a></div></header>
+<main class="wrap">
+<div class="card">
+<h1>Business Health&nbsp;Assessment</h1>
+<p class="tag">Five bites of the apple: the five questions that find where the biggest win is&nbsp;hiding.</p>
+<p class="kicker">The 60-second assessment</p>
+<p class="lede">Tell us where the business is today, where you want it to go, and what stands in the way. Your answers shape a free evaluation, with real findings in writing, then you decide. No clock ticking, nothing to buy&nbsp;first.</p>
+<form id="bha" onsubmit="return false">
+<fieldset class="q"><legend><b>1.</b> What is the biggest thing limiting growth or performance right&nbsp;now?</legend><div class="opts"><label class="opt"><input type="checkbox" name="q1" value="Scaling the business profitably"><span>Scaling the business&nbsp;profitably</span></label><label class="opt"><input type="checkbox" name="q1" value="Improving profitability and margins"><span>Improving profitability and&nbsp;margins</span></label><label class="opt"><input type="checkbox" name="q1" value="Defining a clear strategic direction"><span>Defining a clear strategic&nbsp;direction</span></label><label class="opt"><input type="checkbox" name="q1" value="Strengthening leadership and accountability"><span>Strengthening leadership and&nbsp;accountability</span></label><label class="opt"><input type="checkbox" name="q1" value="Improving sales and business development"><span>Improving sales and business&nbsp;development</span></label><label class="opt"><input type="checkbox" name="q1" value="Improving operational performance and execution"><span>Improving operational performance and&nbsp;execution</span></label><label class="opt"><input type="checkbox" name="q1" value="Building scalable systems, processes and KPIs"><span>Building scalable systems, processes and&nbsp;KPIs</span></label><label class="opt"><input type="checkbox" name="q1" value="Creating stronger alignment across leadership, people, sales and operations"><span>Creating stronger alignment across leadership, people, sales and&nbsp;operations</span></label><label class="opt other"><input type="checkbox" name="q1" value="Other" data-other="q1o"><span>Other:</span><input type="text" id="q1o" aria-label="Other, question 1" placeholder="Tell us"></label></div></fieldset>
+<fieldset class="q"><legend><b>2.</b> If you could improve ONE outcome in the next 12 months, which creates the most&nbsp;value?</legend><div class="opts"><label class="opt"><input type="checkbox" name="q2" value="Increase revenue"><span>Increase&nbsp;revenue</span></label><label class="opt"><input type="checkbox" name="q2" value="Increase profitability"><span>Increase&nbsp;profitability</span></label><label class="opt"><input type="checkbox" name="q2" value="Improve cash flow and financial performance"><span>Improve cash flow and financial&nbsp;performance</span></label><label class="opt"><input type="checkbox" name="q2" value="Increase sales pipeline and conversion"><span>Increase sales pipeline and&nbsp;conversion</span></label><label class="opt"><input type="checkbox" name="q2" value="Improve productivity and operational efficiency"><span>Improve productivity and operational&nbsp;efficiency</span></label><label class="opt"><input type="checkbox" name="q2" value="Build or strengthen the leadership team"><span>Build or strengthen the leadership&nbsp;team</span></label><label class="opt"><input type="checkbox" name="q2" value="Improve employee performance, accountability and retention"><span>Improve employee performance, accountability and&nbsp;retention</span></label><label class="opt"><input type="checkbox" name="q2" value="Prepare the organization for its next stage of growth"><span>Prepare the organization for its next stage of&nbsp;growth</span></label><label class="opt other"><input type="checkbox" name="q2" value="Other" data-other="q2o"><span>Other:</span><input type="text" id="q2o" aria-label="Other, question 2" placeholder="Tell us"></label></div></fieldset>
+<fieldset class="q"><legend><b>3.</b> How confident are you that your team can execute the growth&nbsp;strategy?</legend><div class="opts"><label class="opt"><input type="checkbox" name="q3" value="Very confident — execution is strong and consistent"><span>Very confident — execution is strong and&nbsp;consistent</span></label><label class="opt"><input type="checkbox" name="q3" value="Confident — but there are a few gaps"><span>Confident — but there are a few&nbsp;gaps</span></label><label class="opt"><input type="checkbox" name="q3" value="Somewhat confident — execution is inconsistent"><span>Somewhat confident — execution is&nbsp;inconsistent</span></label><label class="opt"><input type="checkbox" name="q3" value="Not very confident — significant gaps exist"><span>Not very confident — significant gaps&nbsp;exist</span></label><label class="opt"><input type="checkbox" name="q3" value="Unclear — we need a clearer strategy and accountability structure"><span>Unclear — we need a clearer strategy and accountability&nbsp;structure</span></label></div></fieldset>
+<fieldset class="q"><legend><b>4.</b> Where is the greatest untapped opportunity inside the&nbsp;business?</legend><div class="opts"><label class="opt"><input type="checkbox" name="q4" value="Revenue growth and new business"><span>Revenue growth and new&nbsp;business</span></label><label class="opt"><input type="checkbox" name="q4" value="Existing-client growth and retention"><span>Existing-client growth and&nbsp;retention</span></label><label class="opt"><input type="checkbox" name="q4" value="Pricing, margins and profitability"><span>Pricing, margins and&nbsp;profitability</span></label><label class="opt"><input type="checkbox" name="q4" value="People and leadership"><span>People and&nbsp;leadership</span></label><label class="opt"><input type="checkbox" name="q4" value="Operational efficiency"><span>Operational&nbsp;efficiency</span></label><label class="opt"><input type="checkbox" name="q4" value="Processes, systems and technology"><span>Processes, systems and&nbsp;technology</span></label><label class="opt"><input type="checkbox" name="q4" value="Market positioning and competitive differentiation"><span>Market positioning and competitive&nbsp;differentiation</span></label><label class="opt"><input type="checkbox" name="q4" value="I’m not sure — I need an outside perspective"><span>I’m not sure — I need an outside&nbsp;perspective</span></label><label class="opt other"><input type="checkbox" name="q4" value="Other" data-other="q4o"><span>Other:</span><input type="text" id="q4o" aria-label="Other, question 4" placeholder="Tell us"></label></div></fieldset>
+<fieldset class="q"><legend><b>5.</b> What would a winning partnership with DashRite Advisory look&nbsp;like?</legend><div class="opts"><label class="opt"><input type="checkbox" name="q5" value="A clear growth strategy and roadmap"><span>A clear growth strategy and&nbsp;roadmap</span></label><label class="opt"><input type="checkbox" name="q5" value="A stronger sales and revenue engine"><span>A stronger sales and revenue&nbsp;engine</span></label><label class="opt"><input type="checkbox" name="q5" value="Improved operational execution"><span>Improved operational&nbsp;execution</span></label><label class="opt"><input type="checkbox" name="q5" value="Leadership development and accountability"><span>Leadership development and&nbsp;accountability</span></label><label class="opt"><input type="checkbox" name="q5" value="Better systems, processes and KPIs"><span>Better systems, processes and&nbsp;KPIs</span></label><label class="opt"><input type="checkbox" name="q5" value="Profitability and margin improvement"><span>Profitability and margin&nbsp;improvement</span></label><label class="opt"><input type="checkbox" name="q5" value="An objective assessment of the business and its opportunities"><span>An objective assessment of the business and its&nbsp;opportunities</span></label><label class="opt"><input type="checkbox" name="q5" value="A combination of the above"><span>A combination of the&nbsp;above</span></label></div></fieldset>
+<fieldset class="q"><legend>Optional: help us understand your&nbsp;business</legend>
+<div class="fields">
+<label>Name<input name="name" autocomplete="name"></label>
+<label>Company<input name="company" autocomplete="organization"></label>
+<label>Title<input name="title" autocomplete="organization-title"></label>
+<label>Email or phone<input name="contact" autocomplete="email"></label>
+<label class="full">The one issue you would most like to discuss<textarea name="issue" rows="3"></textarea></label>
+</div></fieldset>
+<div class="btns">
+<button class="btn primary" id="send" type="button">Email my answers</button>
+<a class="btn ghost" href="DashRite-Business-Health-Assessment.pdf" target="_blank" rel="noopener">Download the PDF</a>
+</div>
+<p class="note">“Email my answers” opens your own email app with your answers filled in, ready to send to TEdick@dashriteadvisory.com. Nothing is stored on this page or sent until you press send in your email.</p>
+<div class="copy"><span>If your email app does not open, send your answers to</span> <code>TEdick@dashriteadvisory.com</code> <span style="white-space:nowrap">or call <code>(786) 972-1252</code></span></div>
+</form>
+</div>
+<div class="card">
+<p class="kicker">What happens next</p>
+<ul class="next">
+<li>We read your answers and come back with a written first read: the free&nbsp;evaluation.</li>
+<li>If we see something worth fixing, you get a scope in writing and one fixed&nbsp;number.</li>
+<li>Built in the tools you already own, so your team runs it and it’s yours when we&nbsp;leave.</li>
+</ul>
+</div>
+</main>
+<footer><p class="rite">Built RITE!</p><p class="vals">R-espect · I-ntegrity · T-eamwork · E-xcellence</p><p>DashRite Advisory LLC · Fort Lauderdale, Florida · <a href="index.html">dashriteadvisory.com</a></p></footer>
+<script>
+document.querySelectorAll('input[data-other]').forEach(function(cb){var t=document.getElementById(cb.dataset.other);t.addEventListener('input',function(){cb.checked=t.value.trim().length>0;});});
+function buildMail(){
+ var f=document.getElementById('bha'),L=['Business Health Assessment',''];
+ document.querySelectorAll('fieldset.q').forEach(function(fs,i){
+  var boxes=fs.querySelectorAll('input[type=checkbox]');if(!boxes.length)return;
+  var lg=fs.querySelector('legend').textContent.replace(/\s+/g,' ').trim(),picked=[];
+  boxes.forEach(function(b){if(b.checked){if(b.dataset.other){var o=document.getElementById(b.dataset.other).value.trim();picked.push('Other: '+(o||'(not specified)'));}else picked.push(b.value);}});
+  L.push(lg);L.push(picked.length?picked.map(function(p){return '  - '+p;}).join('\n'):'  - (no answer)');L.push('');
+ });
+ ['name','company','title','contact','issue'].forEach(function(k){var v=(f.elements[k].value||'').trim();if(v)L.push(k.charAt(0).toUpperCase()+k.slice(1)+': '+v);});
+ var body=L.join('\n');
+ return 'mailto:TEdick@dashriteadvisory.com?subject='+encodeURIComponent('Business Health Assessment')+'&body='+encodeURIComponent(body);
+}
+document.getElementById('send').addEventListener('click',function(){location.href=buildMail();});
+</script>
+</body></html>
